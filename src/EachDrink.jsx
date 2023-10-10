@@ -26,16 +26,17 @@ function EachDrink() {
       };
   
       fetchData();
-    }, []); 
+    }, [DrinkID]); 
   
 
   
   return (
     <div>
         <button onClick={handlerBack} className="button">Drinks</button>
+        {netWork && <p>{netWork}</p>}
             <ul>
                 {data.map((juice)=><li key={juice.idDrink} className='eachDrink'>
-                    <img src={juice.strDrinkThumb}/>
+                    <img src={juice.strDrinkThumb} alt={juice.strDrink}/>
                     <div className='juiceText'>
                         <h1>Title:{juice.strDrink}</h1>
                         <h2>DateModified:{juice.dateModified}</h2>
